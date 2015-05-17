@@ -39,6 +39,7 @@ app.get('/songs', function(req, res) {
       console.log("Requesting path: " + path);
       console.log("Error : " + err)
       results.itunes = data
+
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(data));
     });

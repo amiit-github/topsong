@@ -194,6 +194,12 @@ a:focus{color:inherit; text-decoration: none;}
 
 $(document).ready(function() {
 
+  // function playerupdate() {
+  //   var current_tracks = ToneDen.player.getInstanceByDom("#player-container").getAllTracks();
+  //   console.log(current_tracks);
+  //   ToneDen.player.getInstanceByDom("#player-container").removeTracks(0, current_tracks.length);
+  // }
+
   function getsongs() {
     var country = $( "#countries_list" ).val();
     var genre = $( ".genre li.active").text();
@@ -203,11 +209,16 @@ $(document).ready(function() {
     $.getJSON( "/songs", { country: country, genreid: genre_id } )
     .done(function( json ) {
       console.log( json );
+
     })
     .fail(function( jqxhr, textStatus, error ) {
       var err = textStatus + ", " + error;
       console.log( "Request Failed: " + err );
     });
+
+    // setTimeout(function(){
+    //         playerupdate();
+    // },3000);
   }
 
   getsongs();
