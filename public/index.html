@@ -33,18 +33,20 @@
     color: white;
     text-decoration: none;
     letter-spacing: .50px;
+    text-decoration: none;
   }
   aside a:hover {
     color: red;
     text-decoration: none;
   }
-  aside a.active {
+  .active {
     color: red;
   }
 
 a:link{color:inherit}
 a:active{color:inherit}
 a:visited{color:inherit}
+a:focus{color:inherit; text-decoration: none;}
   aside ul {
     list-style-type: none;
   }
@@ -54,7 +56,7 @@ a:visited{color:inherit}
     line-height: 37px;
   }
 
-  aside ul.genre {
+  aside ul.genre, ul#countries_list {
     font-size: 11px;
     line-height: 17px;
     padding: 10px;
@@ -78,58 +80,59 @@ a:visited{color:inherit}
 </head>
 <body>
 <aside class="sidebar">
-    <ul class="main">
+    <ul class="main" id="countr">
         <li>
-          <a href="#">Country : <span id="country">India</span></a>
+          <span>Country</span>
           <span class="glyphicon glyphicon-map-marker"></span>
+          <select id="countries_list"><option value="ae">United Arab Emirates</option><option value="ag">Antigua and Barbuda</option><option value="ai">Anguilla</option><option value="al">Albania</option><option value="am">Armenia</option><option value="ao">Angola</option><option value="ar">Argentina</option><option value="at">Austria</option><option value="au">Australia</option><option value="az">Azerbaijan</option><option value="bb">Barbados</option><option value="be">Belgium</option><option value="bf">Burkina-Faso</option><option value="bg">Bulgaria</option><option value="bh">Bahrain</option><option value="bj">Benin</option><option value="bm">Bermuda</option><option value="bn">Brunei Darussalam</option><option value="bo">Bolivia</option><option value="br">Brazil</option><option value="bs">Bahamas</option><option value="bt">Bhutan</option><option value="bw">Botswana</option><option value="by">Belarus</option><option value="bz">Belize</option><option value="ca">Canada</option><option value="cg">Democratic Republic of the Congo</option><option value="ch">Switzerland</option><option value="cl">Chile</option><option value="cn">China</option><option value="co">Colombia</option><option value="cr">Costa Rica</option><option value="cv">Cape Verde</option><option value="cy">Cyprus</option><option value="cz">Czech Republic</option><option value="de">Germany</option><option value="dk">Denmark</option><option value="dm">Dominica</option><option value="do">Dominican Republic</option><option value="dz">Algeria</option><option value="ec">Ecuador</option><option value="ee">Estonia</option><option value="eg">Egypt</option><option value="es">Spain</option><option value="fi">Finland</option><option value="fj">Fiji</option><option value="fm">Federated States of Micronesia</option><option value="fr">France</option><option value="gb">Great Britain</option><option value="gd">Grenada</option><option value="gh">Ghana</option><option value="gm">Gambia</option><option value="gr">Greece</option><option value="gt">Guatemala</option><option value="gw">Guinea Bissau</option><option value="gy">Guyana</option><option value="hk">Hong Kong</option><option value="hn">Honduras</option><option value="hr">Croatia</option><option value="hu">Hungaria</option><option value="id">Indonesia</option><option value="ie">Ireland</option><option value="il">Israel</option><option value="in" selected="selected">India</option><option value="is">Iceland</option><option value="it">Italy</option><option value="jm">Jamaica</option><option value="jo">Jordan</option><option value="jp">Japan</option><option value="ke">Kenya</option><option value="kg">Krygyzstan</option><option value="kh">Cambodia</option><option value="kn">Saint Kitts and Nevis</option><option value="kr">South Korea</option><option value="kw">Kuwait</option><option value="ky">Cayman Islands</option><option value="kz">Kazakhstan</option><option value="la">Laos</option><option value="lb">Lebanon</option><option value="lc">Saint Lucia</option><option value="lk">Sri Lanka</option><option value="lr">Liberia</option><option value="lt">Lithuania</option><option value="lu">Luxembourg</option><option value="lv">Latvia</option><option value="md">Moldova</option><option value="mg">Madagascar</option><option value="mk">Macedonia</option><option value="ml">Mali</option><option value="mn">Mongolia</option><option value="mo">Macau</option><option value="mr">Mauritania</option><option value="ms">Montserrat</option><option value="mt">Malta</option><option value="mu">Mauritius</option><option value="mw">Malawi</option><option value="mx">Mexico</option><option value="my">Malaysia</option><option value="mz">Mozambique</option><option value="na">Namibia</option><option value="ne">Niger</option><option value="ng">Nigeria</option><option value="ni">Nicaragua</option><option value="nl">Netherlands</option><option value="np">Nepal</option><option value="no">Norway</option><option value="nz">New Zealand</option><option value="om">Oman</option><option value="pa">Panama</option><option value="pe">Peru</option><option value="pg">Papua New Guinea</option><option value="ph">Philippines</option><option value="pk">Pakistan</option><option value="pl">Poland</option><option value="pt">Portugal</option><option value="pw">Palau</option><option value="py">Paraguay</option><option value="qa">Qatar</option><option value="ro">Romania</option><option value="ru">Russia</option><option value="sa">Saudi Arabia</option><option value="sb">Soloman Islands</option><option value="sc">Seychelles</option><option value="se">Sweden</option><option value="sg">Singapore</option><option value="si">Slovenia</option><option value="sk">Slovakia</option><option value="sl">Sierra Leone</option><option value="sn">Senegal</option><option value="sr">Suriname</option><option value="st">Sao Tome e Principe</option><option value="sv">El Salvador</option><option value="sz">Swaziland</option><option value="tc">Turks and Caicos Islands</option><option value="td">Chad</option><option value="th">Thailand</option><option value="tj">Tajikistan</option><option value="tm">Turkmenistan</option><option value="tn">Tunisia</option><option value="tr">Turkey</option><option value="tt">Republic of Trinidad and Tobago</option><option value="tw">Taiwan</option><option value="tz">Tanzania</option><option value="ua">Ukraine</option><option value="ug">Uganda</option><option value="us">United States of America</option><option value="uy">Uruguay</option><option value="uz">Uzbekistan</option><option value="vc">Saint Vincent and the Grenadines</option><option value="ve">Venezuela</option><option value="vg">British Virgin Islands</option><option value="vn">Vietnam</option><option value="ye">Yemen</option><option value="za">South Africa</option><option value="zw">Zimbabwe</option></select>
         </li>
         <li>
-          <a href="#" class="active">Genre</a>
+          <span class="active">Genre</span>
           <span class="glyphicon glyphicon-music"></span>
         </li>
           <ul class="genre">
-            <li><a href="#">All</a></li>
-            <li><a href="#">Alternative</a></li>
-            <li><a href="#">Anime</a></li>
-            <li><a href="#">Blues</a></li>
-            <li><a href="#">Brazilian</a></li>
-            <li><a href="#">Children's Music</a></li>
-            <li><a href="#">Chinese</a></li>
-            <li><a href="#">Christian &amp; Gospel</a></li>
-            <li><a href="#">Classical</a></li>
-            <li><a href="#">Comedy</a></li>
-            <li><a href="#">Country</a></li>
-            <li><a href="#">Dance</a></li>
-            <li><a href="#">Disney</a></li>
-            <li><a href="#">Easy Listening</a></li>
-            <li><a href="#">Electronic</a></li>
-            <li><a href="#">Enka</a></li>
-            <li><a href="#">Fitness &amp; Workout</a></li>
-            <li><a href="#">French Pop</a></li>
-            <li><a href="#">German Folk</a></li>
-            <li><a href="#">German Pop</a></li>
-            <li><a href="#">Hip-Hop/Rap</a></li>
-            <li><a href="#">Holiday</a></li>
-            <li><a href="#">Indian</a></li>
-            <li><a href="#">Instrumental</a></li>
-            <li><a href="#">J-Pop</a></li>
-            <li><a href="#">Jazz</a></li>
-            <li><a href="#">K-Pop</a></li>
-            <li><a href="#">Karaoke</a></li>
-            <li><a href="#">Kayokyoku</a></li>
-            <li><a href="#">Korean</a></li>
-            <li><a href="#">Latino</a></li>
-            <li><a href="#">New Age</a></li>
-            <li><a href="#">Opera</a></li>
-            <li><a href="#">Pop</a></li>
-            <li><a href="#">R&amp;B/Soul</a></li>
-            <li><a href="#">Reggae</a></li>
-            <li><a href="#">Rock</a></li>
-            <li><a href="#">Singer/Songwriter</a></li>
-            <li><a href="#">Soundtrack</a></li>
-            <li><a href="#">Spoken Word</a></li>
-            <li><a href="#">Vocal</a></li>
-            <li><a href="#">World</a></li>
+            <li class="active"><a href="#" data-genreid="0">All</a></li>
+            <li><a href="#" data-genreid="20">Alternative</a></li>
+            <li><a href="#" data-genreid="29">Anime</a></li>
+            <li><a href="#" data-genreid="2">Blues</a></li>
+            <li><a href="#" data-genreid="1122">Brazilian</a></li>
+            <li><a href="#" data-genreid="4">Children's Music</a></li>
+            <li><a href="#" data-genreid="1232">Chinese</a></li>
+            <li><a href="#" data-genreid="22">Christian &amp; Gospel</a></li>
+            <li><a href="#" data-genreid="5">Classical</a></li>
+            <li><a href="#" data-genreid="3">Comedy</a></li>
+            <li><a href="#" data-genreid="6">Country</a></li>
+            <li><a href="#" data-genreid="17">Dance</a></li>
+            <li><a href="#" data-genreid="50000063">Disney</a></li>
+            <li><a href="#" data-genreid="25">Easy Listening</a></li>
+            <li><a href="#" data-genreid="7">Electronic</a></li>
+            <li><a href="#" data-genreid="28">Enka</a></li>
+            <li><a href="#" data-genreid="50">Fitness &amp; Workout</a></li>
+            <li><a href="#" data-genreid="50000064">French Pop</a></li>
+            <li><a href="#" data-genreid="50000068">German Folk</a></li>
+            <li><a href="#" data-genreid="50000066">German Pop</a></li>
+            <li><a href="#" data-genreid="18">Hip-Hop/Rap</a></li>
+            <li><a href="#" data-genreid="8">Holiday</a></li>
+            <li><a href="#" data-genreid="1262">Indian</a></li>
+            <li><a href="#" data-genreid="53">Instrumental</a></li>
+            <li><a href="#" data-genreid="27">J-Pop</a></li>
+            <li><a href="#" data-genreid="11">Jazz</a></li>
+            <li><a href="#" data-genreid="51">K-Pop</a></li>
+            <li><a href="#" data-genreid="52">Karaoke</a></li>
+            <li><a href="#" data-genreid="30">Kayokyoku</a></li>
+            <li><a href="#" data-genreid="1243">Korean</a></li>
+            <li><a href="#" data-genreid="12">Latino</a></li>
+            <li><a href="#" data-genreid="13">New Age</a></li>
+            <li><a href="#" data-genreid="9">Opera</a></li>
+            <li><a href="#" data-genreid="14">Pop</a></li>
+            <li><a href="#" data-genreid="15">R&amp;B/Soul</a></li>
+            <li><a href="#" data-genreid="24">Reggae</a></li>
+            <li><a href="#" data-genreid="21">Rock</a></li>
+            <li><a href="#" data-genreid="10">Singer/Songwriter</a></li>
+            <li><a href="#" data-genreid="16">Soundtrack</a></li>
+            <li><a href="#" data-genreid="50000061">Spoken Word</a></li>
+            <li><a href="#" data-genreid="23">Vocal</a></li>
+            <li><a href="#" data-genreid="19">World</a></li>
           </ul>
     </ul>
 </aside>
@@ -141,8 +144,10 @@ a:visited{color:inherit}
 </section>
 <div class="signature">
   <span class="glyphicon glyphicon-heart"></span>
-  <a target="_blank" href="http://www.makeinindia.com/" style="text-decoration:none;">Proudly Made in India</a>
+  <a target="_blank" href="#" style="text-decoration:none;">Proudly Made in India</a>
 </div>
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 (function() {
   var script = document.createElement("script");
@@ -174,6 +179,51 @@ a:visited{color:inherit}
       ]
     });
   });
+</script>
+<script type="text/javascript">
+
+
+// $(document).ready(function() {
+
+//     $.map(countries, function (v, k) {
+//       console.log(k);
+//       $('#countries_list').append('<option value="'+k+'">'+v+'</option>')
+//     });
+//   console.log($("#countries_list".text()))
+// });
+
+$(document).ready(function() {
+
+  function getsongs() {
+    var country = $( "#countries_list" ).val();
+    var genre = $( ".genre li.active").text();
+    var genre_id = $( ".genre li.active a").attr("data-genreid");
+    console.log("Requesting songs for Country: " + country+" Genre: "+genre+" GenreID: "+genre_id);
+
+    $.getJSON( "/songs", { country: country, genreid: genre_id } )
+    .done(function( json ) {
+      console.log( json );
+    })
+    .fail(function( jqxhr, textStatus, error ) {
+      var err = textStatus + ", " + error;
+      console.log( "Request Failed: " + err );
+    });
+  }
+
+  getsongs();
+
+  $("#countries_list").change(function () {
+    var curr_country_code = this.value;
+    $("ul.genre > li:first-child a").trigger("click");
+  });
+
+  $('ul.genre li > a').click(function() {
+    $('li').removeClass();
+    $(this).parent().addClass('active');
+    getsongs()
+  });
+});
+
 </script>
 </body>
 </html>
