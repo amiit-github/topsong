@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top Songs</title>
+</head>
+<body>
+
+<div id="player-container" style="width: inherit; height: 560px;"> </div>
+
+
+<script type="text/javascript">
+(function() {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.async = true;
+  script.src = "//sd.toneden.io/production/toneden.loader.js";
+  var entry = document.getElementsByTagName("script")[0];entry.parentNode.insertBefore(script, entry);
+  }());
+
+  ToneDenReady = window.ToneDenReady || [];
+  ToneDenReady.push(function() {
+    //skin types: light, dark, mojave, aurora
+    //visualizer types: waves, bars
+    ToneDen.player.create({
+      dom: "#player-container",
+      skin: "mojave",
+      visualizer:"waves",
+      keyboardEvents: true,
+      useCustomPurchaseTitle: false,
+      mini: false,
+      urls: ["https://soundcloud.com/giraffage/music-sounds-better-with-you",
+      "https://soundcloud.com/wave-racer/wave-racer-streamers",
+      "https://soundcloud.com/wave-racer/wave-racer-streamers",
+      "https://soundcloud.com/flume/sleepless-feat-jezzabell-doran"]
+    });
+  });
+</script>
+
+
+</body>
+</html>

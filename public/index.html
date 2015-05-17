@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top Songs</title>
+  <link rel="shortcut icon" type="image/png" href="fav.ico"/>
+
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<style type="text/css">
+  html, body {
+    height:100%;
+    background-color: #090B0D;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+  }
+  a {text-decoration: none; }
+  .header {
+    margin-left: 80px;
+    padding-bottom: 20px;
+  }
+  aside {
+    width: 18%;
+    background: black;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  section {
+    margin-left: 18%;
+  }
+  aside a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: .50px;
+  }
+  aside a:hover {
+    color: red;
+    text-decoration: none;
+  }
+  aside a.active {
+    color: red;
+  }
+
+a:link{color:inherit}
+a:active{color:inherit}
+a:visited{color:inherit}
+  aside ul {
+    list-style-type: none;
+  }
+  aside ul.main {
+    margin-top: 37px;
+    font-size: 15px;
+    line-height: 37px;
+  }
+
+  aside ul.genre {
+    font-size: 11px;
+    line-height: 17px;
+    padding: 10px;
+  }
+
+  .header h2 {
+    color: red;
+  }
+  .header a {
+    color: white;
+  }
+  .signature {
+    color: red;
+    position: absolute;
+    top: 16px;
+    right: 18px;
+  }
+
+</style>
+
+</head>
+<body>
+<aside class="sidebar">
+    <ul class="main">
+        <li>
+          <a href="#">Country : <span id="country">India</span></a>
+          <span class="glyphicon glyphicon-map-marker"></span>
+        </li>
+        <li>
+          <a href="#" class="active">Genre</a>
+          <span class="glyphicon glyphicon-music"></span>
+        </li>
+          <ul class="genre">
+            <li><a href="#">All</a></li>
+            <li><a href="#">Alternative</a></li>
+            <li><a href="#">Anime</a></li>
+            <li><a href="#">Blues</a></li>
+            <li><a href="#">Brazilian</a></li>
+            <li><a href="#">Children's Music</a></li>
+            <li><a href="#">Chinese</a></li>
+            <li><a href="#">Christian &amp; Gospel</a></li>
+            <li><a href="#">Classical</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Country</a></li>
+            <li><a href="#">Dance</a></li>
+            <li><a href="#">Disney</a></li>
+            <li><a href="#">Easy Listening</a></li>
+            <li><a href="#">Electronic</a></li>
+            <li><a href="#">Enka</a></li>
+            <li><a href="#">Fitness &amp; Workout</a></li>
+            <li><a href="#">French Pop</a></li>
+            <li><a href="#">German Folk</a></li>
+            <li><a href="#">German Pop</a></li>
+            <li><a href="#">Hip-Hop/Rap</a></li>
+            <li><a href="#">Holiday</a></li>
+            <li><a href="#">Indian</a></li>
+            <li><a href="#">Instrumental</a></li>
+            <li><a href="#">J-Pop</a></li>
+            <li><a href="#">Jazz</a></li>
+            <li><a href="#">K-Pop</a></li>
+            <li><a href="#">Karaoke</a></li>
+            <li><a href="#">Kayokyoku</a></li>
+            <li><a href="#">Korean</a></li>
+            <li><a href="#">Latino</a></li>
+            <li><a href="#">New Age</a></li>
+            <li><a href="#">Opera</a></li>
+            <li><a href="#">Pop</a></li>
+            <li><a href="#">R&amp;B/Soul</a></li>
+            <li><a href="#">Reggae</a></li>
+            <li><a href="#">Rock</a></li>
+            <li><a href="#">Singer/Songwriter</a></li>
+            <li><a href="#">Soundtrack</a></li>
+            <li><a href="#">Spoken Word</a></li>
+            <li><a href="#">Vocal</a></li>
+            <li><a href="#">World</a></li>
+          </ul>
+    </ul>
+</aside>
+<section>
+  <div class="header">
+    <h2>Top Songs</h2> <span> Ranked by <a target="_blank" href="https://www.apple.com/itunes/charts/songs/">Itunes.</a> Streamed by <a target="_blank" href="https://soundcloud.com/">Soundcloud.</a></span>
+  </div>
+  <div id="player-container" style="width: inherit; height: 560px;"> </div>
+</section>
+<div class="signature">
+  <span class="glyphicon glyphicon-heart"></span>
+  <a target="_blank" href="http://www.makeinindia.com/" style="text-decoration:none;">Proudly Made in India</a>
+</div>
+<script type="text/javascript">
+(function() {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.async = true;
+  script.src = "//sd.toneden.io/production/toneden.loader.js";
+  var entry = document.getElementsByTagName("script")[0];entry.parentNode.insertBefore(script, entry);
+  }());
+
+  ToneDenReady = window.ToneDenReady || [];
+  ToneDenReady.push(function() {
+    //skin types: light, dark, mojave, aurora
+    //visualizer types: waves, bars
+    ToneDen.player.create({
+      dom: "#player-container",
+      skin: "dark",
+      visualizer:"waves",
+      keyboardEvents: true,
+      useCustomPurchaseTitle: true,
+      urls: ["https://soundcloud.com/hindisongs2015/bezubaan-phir-se-abcd-2-varun-dhawan",
+      "https://soundcloud.com/saf_aslam/hamari-adhuri-kahani-title-song-arijit-singh-official-full-audio",
+      "https://soundcloud.com/the7commandments/wiz-khalifa-see-you-again-feat-charlie-puth-from-furious-7",
+      "https://soundcloud.com/goodday-3/fifty-shades-of-grey-official-soundtrackellie-goulding-love-me-like-you-do",
+      "https://soundcloud.com/daniyallv/jeena-jeena-atif-aslam-ost-badlapur-1",
+      "https://soundcloud.com/kumar-prashant-cs/dil-dhadakne-do-zindagi-na",
+      "https://soundcloud.com/ankit-tiwari-official/tu-hai-ki-nahi-roy-ankit-tiwari-full-song",
+      "https://soundcloud.com/arijit-singh-official-account/judaai-badlapur-arijit-singh-rekha-bhardwaj-2015",
+      "https://soundcloud.com/neelofficial/ammk"
+      ]
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "Music",
+  "version": "0.0.1",
+  "description": "Top Songs on Itunes are streamed from Soundcloud",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "youtube-node": "^1.2.0",
+    "https": "^1.0.0"
+  },
+  "engines": {
+    "node": "0.12.2"
+  },
+  "devDependencies": {},
+  "author": "amiit-github",
+  "license": "ISC"
+}
