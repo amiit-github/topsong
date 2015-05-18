@@ -194,6 +194,7 @@ a:focus{color:inherit; text-decoration: none;}
 </div>
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://connect.soundcloud.com/sdk.js"></script>
 <script type="text/javascript">
 (function() {
   var script = document.createElement("script");
@@ -212,17 +213,7 @@ a:focus{color:inherit; text-decoration: none;}
       skin: "dark",
       visualizer:"waves",
       keyboardEvents: true,
-      useCustomPurchaseTitle: true,
-      urls: ["https://soundcloud.com/hindisongs2015/bezubaan-phir-se-abcd-2-varun-dhawan",
-      "https://soundcloud.com/saf_aslam/hamari-adhuri-kahani-title-song-arijit-singh-official-full-audio",
-      "https://soundcloud.com/the7commandments/wiz-khalifa-see-you-again-feat-charlie-puth-from-furious-7",
-      "https://soundcloud.com/goodday-3/fifty-shades-of-grey-official-soundtrackellie-goulding-love-me-like-you-do",
-      "https://soundcloud.com/daniyallv/jeena-jeena-atif-aslam-ost-badlapur-1",
-      "https://soundcloud.com/kumar-prashant-cs/dil-dhadakne-do-zindagi-na",
-      "https://soundcloud.com/ankit-tiwari-official/tu-hai-ki-nahi-roy-ankit-tiwari-full-song",
-      "https://soundcloud.com/arijit-singh-official-account/judaai-badlapur-arijit-singh-rekha-bhardwaj-2015",
-      "https://soundcloud.com/neelofficial/ammk"
-      ]
+      useCustomPurchaseTitle: true
     });
   });
 </script>
@@ -240,10 +231,58 @@ a:focus{color:inherit; text-decoration: none;}
 
 $(document).ready(function() {
 
-  function playerupdate() {
+  SC.initialize({
+    client_id: '981a74330d63b65402ab2af1ea15aaeb'
+  });
+
+  function playerupdate(soundcloud_urls) {
     var current_tracks = ToneDen.player.getInstanceByDom("#player-container").getAllTracks();
-    console.log(current_tracks);
-    ToneDen.player.getInstanceByDom("#player-container").removeTracks(0, current_tracks.length);
+    if(current_tracks.length > 0) { ToneDen.player.getInstanceByDom("#player-container").removeTracks(0, current_tracks.length); }
+    ToneDen.player.getInstanceByDom("#player-container").addTracks(soundcloud_urls);
+    ToneDen.player.getInstanceByDom("#player-container").skipTo(0, false);
+    $('#player-container .td.player.dark').css("background", "rgba(1, 10, 19, 1)");
+    $('#player-container .playlist').css("max-height", "100%");
+    $('#player-container .playlist').css("overflow-y", "visible");
+    $('#player-container .playlist').css("overflow-x", "visible");
+
+      setTimeout(function() {
+           $('#player-container .td.player.dark').css("background", "rgba(1, 10, 19, 1)");
+           $('#player-container .playlist').css("max-height", "100%");
+           $('#player-container .playlist').css("overflow-y", "visible");
+           $('#player-container .playlist').css("overflow-x", "visible");
+      }, 2000);
+
+    // var checkExist = setInterval(function() {
+    //    if ($('#player-container .player').text().trim().length > 0) {
+    //      $('#player-container .dark').css("background", "rgba(1, 10, 19, 1)");
+    //      $('#player-container .playlist').css("max-height", "100%");
+    //      $('#player-container .playlist').css("overflow-y", "visible");
+    //      $('#player-container .playlist').css("overflow-x", "visible");
+    //      //playerupdate();
+    //       clearInterval(checkExist);
+    //    }
+    // }, 100);
+  }
+
+  function searchOnSoundcloud(json_arr) {
+    console.log(json_arr);
+    var items = json_arr[0].entry;
+    if(!(items instanceof Array)) return;
+    var soundcloud_urls = [];
+    var index, item, song_name, song_url, song_item;
+    for (index=0; index<items.length; index++) {
+      item = items[index];
+      song_name = item['im:name']['label'];
+      SC.get('/tracks', { q: song_name, limit: 1 }, function(tracks) {
+        song_item = Object.keys(tracks).map(function(k) { return tracks[k] });
+        song_url = song_item[0].permalink_url;
+        soundcloud_urls.push(song_url);
+        if (soundcloud_urls.length == 9) {
+          console.log(soundcloud_urls);
+          playerupdate(soundcloud_urls)
+        }
+      });
+    }
   }
 
   function getsongs() {
@@ -254,24 +293,13 @@ $(document).ready(function() {
 
     $.getJSON( "/songs", { country: country, genreid: genre_id } )
     .done(function( json ) {
-      console.log( json );
-
+      json = Object.keys(json).map(function(k) { return json[k] });
+      searchOnSoundcloud(json);
     })
     .fail(function( jqxhr, textStatus, error ) {
       var err = textStatus + ", " + error;
       console.log( "Request Failed: " + err );
     });
-
-    var checkExist = setInterval(function() {
-       if ($('#player-container .player').text().trim().length > 0) {
-         $('#player-container .dark').css("background-color", "#010A13");
-         $('#player-container .playlist').css("max-height", "100%");
-         $('#player-container .playlist').css("overflow-y", "visible");
-         $('#player-container .playlist').css("overflow-x", "visible");
-         //playerupdate();
-          clearInterval(checkExist);
-       }
-    }, 100);
   }
 
   getsongs();
