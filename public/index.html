@@ -1,319 +1,319 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Top Songs</title>
-  <link rel="shortcut icon" type="image/png" href="fav.ico"/>
+	<title>Top Songs</title>
+	<link rel="shortcut icon" type="image/png" href="fav.ico"/>
 
-  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <style type="text/css">
-  html, body {
-    height:100%;
-    background-color: #010A13;
-    font-family: 'Raleway', sans-serif;
-  }
-  a {text-decoration: none; }
-  .header {
-    color: white;
-    margin-left: 80px;
-    padding-bottom: 20px;
-  }
-  select#countries_list {
-    max-width: 200px;
-  }
-  aside {
-    color: white;
-    width: 18%;
-    background: #010A13;
-    float: left;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  section {
-    margin-left: 18%;
-  }
-  aside a {
-    color: white;
-    text-decoration: none;
-    letter-spacing: .50px;
-    text-decoration: none;
-  }
-  aside a:hover {
-    color: red;
-    text-decoration: none;
-  }
-  .active {
-    color: red;
-  }
+	html, body {
+		height:100%;
+		background-color: #010A13;
+		font-family: 'Raleway', sans-serif;
+	}
+	a {text-decoration: none; }
+	.header {
+		color: white;
+		margin-left: 80px;
+		padding-bottom: 20px;
+	}
+	select#countries_list {
+		max-width: 200px;
+	}
+	aside {
+		color: white;
+		width: 18%;
+		background: #010A13;
+		float: left;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	section {
+		margin-left: 18%;
+	}
+	aside a {
+		color: white;
+		text-decoration: none;
+		letter-spacing: .50px;
+		text-decoration: none;
+	}
+	aside a:hover {
+		color: red;
+		text-decoration: none;
+	}
+	.active {
+		color: red;
+	}
 
 a:link{color:inherit}
 a:active{color:inherit}
 a:visited{color:inherit}
 a:focus{color:inherit; text-decoration: none;}
-  aside ul {
-    list-style-type: none;
-  }
-  aside ul.main {
-    margin-top: 37px;
-    font-size: 15px;
-    line-height: 37px;
-  }
-  select#countries_list {
-    height:30px;
-  }
+	aside ul {
+		list-style-type: none;
+	}
+	aside ul.main {
+		margin-top: 37px;
+		font-size: 15px;
+		line-height: 37px;
+	}
+	select#countries_list {
+		height:30px;
+	}
 
-  aside ul.genre {
-    font-size: 11px;
-    line-height: 17px;
-    padding: 10px;
-  }
-  .header h2 {
-    color: red;
-  }
-  .header a {
-    color: white;
-  }
-  .signature {
-    color: red;
-    position: absolute;
-    top: 16px;
-    right: 18px;
-  }
+	aside ul.genre {
+		font-size: 11px;
+		line-height: 17px;
+		padding: 10px;
+	}
+	.header h2 {
+		color: red;
+	}
+	.header a {
+		color: white;
+	}
+	.signature {
+		color: red;
+		position: absolute;
+		top: 16px;
+		right: 18px;
+	}
 
 </style>
 
 </head>
 <body>
 <aside class="sidebar">
-    <ul class="main" id="countr">
-        <li>
-          <span>Country</span>
-          <span class="glyphicon glyphicon-map-marker"></span><br>
-          <select id="countries_list" class="form-control">
-            <option value="ag">Antigua and Barbuda</option><option value="ai">Anguilla</option><option value="al">Albania</option><option value="am">Armenia</option>
-            <option value="ao">Angola</option><option value="ar">Argentina</option><option value="at">Austria</option><option value="au">Australia</option>
-            <option value="az">Azerbaijan</option><option value="bb">Barbados</option><option value="be">Belgium</option><option value="bf">Burkina-Faso</option>
-            <option value="bg">Bulgaria</option><option value="bh">Bahrain</option><option value="bj">Benin</option><option value="bm">Bermuda</option>
-            <option value="bn">Brunei Darussalam</option><option value="bo">Bolivia</option><option value="br">Brazil</option><option value="bs">Bahamas</option>
-            <option value="bt">Bhutan</option><option value="bw">Botswana</option><option value="by">Belarus</option><option value="bz">Belize</option>
-            <option value="ca">Canada</option><option value="cg">Democratic Republic of the Congo</option><option value="ch">Switzerland</option>
-            <option value="cl">Chile</option><option value="cn">China</option><option value="co">Colombia</option><option value="cr">Costa Rica</option>
-            <option value="cv">Cape Verde</option><option value="cy">Cyprus</option><option value="cz">Czech Republic</option><option value="de">Germany</option>
-            <option value="dk">Denmark</option><option value="dm">Dominica</option><option value="do">Dominican Republic</option><option value="dz">Algeria</option>
-            <option value="ec">Ecuador</option><option value="ee">Estonia</option><option value="eg">Egypt</option><option value="es">Spain</option>
-            <option value="fi">Finland</option><option value="fj">Fiji</option><option value="fm">Federated States of Micronesia</option><option value="fr">France</option>
-            <option value="gb">Great Britain</option><option value="gd">Grenada</option><option value="gh">Ghana</option><option value="gm">Gambia</option>
-            <option value="gr">Greece</option><option value="gt">Guatemala</option><option value="gw">Guinea Bissau</option><option value="gy">Guyana</option>
-            <option value="hk">Hong Kong</option><option value="hn">Honduras</option><option value="hr">Croatia</option><option value="hu">Hungaria</option>
-            <option value="id">Indonesia</option><option value="ie">Ireland</option><option value="il">Israel</option><option value="in" selected="selected">India</option>
-            <option value="is">Iceland</option><option value="it">Italy</option><option value="jm">Jamaica</option><option value="jo">Jordan</option>
-            <option value="jp">Japan</option><option value="ke">Kenya</option><option value="kg">Krygyzstan</option><option value="kh">Cambodia</option>
-            <option value="kn">Saint Kitts and Nevis</option><option value="kr">South Korea</option><option value="kw">Kuwait</option><option value="ky">Cayman Islands</option>
-            <option value="kz">Kazakhstan</option><option value="la">Laos</option><option value="lb">Lebanon</option><option value="lc">Saint Lucia</option>
-            <option value="lk">Sri Lanka</option><option value="lr">Liberia</option><option value="lt">Lithuania</option><option value="lu">Luxembourg</option>
-            <option value="lv">Latvia</option><option value="md">Moldova</option><option value="mg">Madagascar</option><option value="mk">Macedonia</option>
-            <option value="ml">Mali</option><option value="mn">Mongolia</option><option value="mo">Macau</option><option value="mr">Mauritania</option>
-            <option value="ms">Montserrat</option><option value="mt">Malta</option><option value="mu">Mauritius</option><option value="mw">Malawi</option>
-            <option value="mx">Mexico</option><option value="my">Malaysia</option><option value="mz">Mozambique</option><option value="na">Namibia</option>
-            <option value="ne">Niger</option><option value="ng">Nigeria</option><option value="ni">Nicaragua</option><option value="nl">Netherlands</option>
-            <option value="np">Nepal</option><option value="no">Norway</option><option value="nz">New Zealand</option><option value="om">Oman</option>
-            <option value="pa">Panama</option><option value="pe">Peru</option><option value="pg">Papua New Guinea</option><option value="ph">Philippines</option>
-            <option value="pk">Pakistan</option><option value="pl">Poland</option><option value="pt">Portugal</option><option value="pw">Palau</option>
-            <option value="py">Paraguay</option><option value="qa">Qatar</option><option value="ro">Romania</option><option value="ru">Russia</option>
-            <option value="sa">Saudi Arabia</option><option value="sb">Soloman Islands</option><option value="sc">Seychelles</option><option value="se">Sweden</option>
-            <option value="sg">Singapore</option><option value="si">Slovenia</option><option value="sk">Slovakia</option><option value="sl">Sierra Leone</option>
-            <option value="sn">Senegal</option><option value="sr">Suriname</option><option value="st">Sao Tome e Principe</option><option value="sv">El Salvador</option>
-            <option value="sz">Swaziland</option><option value="tc">Turks and Caicos Islands</option><option value="td">Chad</option><option value="th">Thailand</option>
-            <option value="tj">Tajikistan</option><option value="tm">Turkmenistan</option><option value="tn">Tunisia</option><option value="tr">Turkey</option>
-            <option value="tt">Republic of Trinidad and Tobago</option><option value="tw">Taiwan</option><option value="tz">Tanzania</option><option value="ua">Ukraine</option>
-            <option value="ug">Uganda</option><option value="us">United States of America</option><option value="uy">Uruguay</option><option value="uz">Uzbekistan</option>
-            <option value="vc">Saint Vincent and the Grenadines</option><option value="ve">Venezuela</option><option value="vg">British Virgin Islands</option>
-            <option value="vn">Vietnam</option><option value="ye">Yemen</option><option value="za">South Africa</option><option value="zw">Zimbabwe</option>
-            <option value="ae">United Arab Emirates</option></select>
-        </li>
-        <li style="margin-top:20px;">
-          <span class="active">Genre</span>
-          <span class="glyphicon glyphicon-music"></span>
-        </li>
-          <ul class="genre">
-            <li class="active"><a href="#" data-genreid="0">All</a></li>
-            <li><a href="#" data-genreid="20">Alternative</a></li>
-            <li><a href="#" data-genreid="29">Anime</a></li>
-            <li><a href="#" data-genreid="2">Blues</a></li>
-            <li><a href="#" data-genreid="1122">Brazilian</a></li>
-            <li><a href="#" data-genreid="4">Children's Music</a></li>
-            <li><a href="#" data-genreid="1232">Chinese</a></li>
-            <li><a href="#" data-genreid="22">Christian &amp; Gospel</a></li>
-            <li><a href="#" data-genreid="5">Classical</a></li>
-            <li><a href="#" data-genreid="3">Comedy</a></li>
-            <li><a href="#" data-genreid="6">Country</a></li>
-            <li><a href="#" data-genreid="17">Dance</a></li>
-            <li><a href="#" data-genreid="50000063">Disney</a></li>
-            <li><a href="#" data-genreid="25">Easy Listening</a></li>
-            <li><a href="#" data-genreid="7">Electronic</a></li>
-            <li><a href="#" data-genreid="28">Enka</a></li>
-            <li><a href="#" data-genreid="50">Fitness &amp; Workout</a></li>
-            <li><a href="#" data-genreid="50000064">French Pop</a></li>
-            <li><a href="#" data-genreid="50000068">German Folk</a></li>
-            <li><a href="#" data-genreid="50000066">German Pop</a></li>
-            <li><a href="#" data-genreid="18">Hip-Hop/Rap</a></li>
-            <li><a href="#" data-genreid="8">Holiday</a></li>
-            <li><a href="#" data-genreid="1262">Indian</a></li>
-            <li><a href="#" data-genreid="53">Instrumental</a></li>
-            <li><a href="#" data-genreid="27">J-Pop</a></li>
-            <li><a href="#" data-genreid="11">Jazz</a></li>
-            <li><a href="#" data-genreid="51">K-Pop</a></li>
-            <li><a href="#" data-genreid="52">Karaoke</a></li>
-            <li><a href="#" data-genreid="30">Kayokyoku</a></li>
-            <li><a href="#" data-genreid="1243">Korean</a></li>
-            <li><a href="#" data-genreid="12">Latino</a></li>
-            <li><a href="#" data-genreid="13">New Age</a></li>
-            <li><a href="#" data-genreid="9">Opera</a></li>
-            <li><a href="#" data-genreid="14">Pop</a></li>
-            <li><a href="#" data-genreid="15">R&amp;B/Soul</a></li>
-            <li><a href="#" data-genreid="24">Reggae</a></li>
-            <li><a href="#" data-genreid="21">Rock</a></li>
-            <li><a href="#" data-genreid="10">Singer/Songwriter</a></li>
-            <li><a href="#" data-genreid="16">Soundtrack</a></li>
-            <li><a href="#" data-genreid="50000061">Spoken Word</a></li>
-            <li><a href="#" data-genreid="23">Vocal</a></li>
-            <li><a href="#" data-genreid="19">World</a></li>
-          </ul>
-    </ul>
+		<ul class="main" id="countr">
+				<li>
+					<span>Country</span>
+					<span class="glyphicon glyphicon-map-marker"></span><br>
+					<select id="countries_list" class="form-control">
+						<option value="ag">Antigua and Barbuda</option><option value="ai">Anguilla</option><option value="al">Albania</option><option value="am">Armenia</option>
+						<option value="ao">Angola</option><option value="ar">Argentina</option><option value="at">Austria</option><option value="au">Australia</option>
+						<option value="az">Azerbaijan</option><option value="bb">Barbados</option><option value="be">Belgium</option><option value="bf">Burkina-Faso</option>
+						<option value="bg">Bulgaria</option><option value="bh">Bahrain</option><option value="bj">Benin</option><option value="bm">Bermuda</option>
+						<option value="bn">Brunei Darussalam</option><option value="bo">Bolivia</option><option value="br">Brazil</option><option value="bs">Bahamas</option>
+						<option value="bt">Bhutan</option><option value="bw">Botswana</option><option value="by">Belarus</option><option value="bz">Belize</option>
+						<option value="ca">Canada</option><option value="cg">Democratic Republic of the Congo</option><option value="ch">Switzerland</option>
+						<option value="cl">Chile</option><option value="cn">China</option><option value="co">Colombia</option><option value="cr">Costa Rica</option>
+						<option value="cv">Cape Verde</option><option value="cy">Cyprus</option><option value="cz">Czech Republic</option><option value="de">Germany</option>
+						<option value="dk">Denmark</option><option value="dm">Dominica</option><option value="do">Dominican Republic</option><option value="dz">Algeria</option>
+						<option value="ec">Ecuador</option><option value="ee">Estonia</option><option value="eg">Egypt</option><option value="es">Spain</option>
+						<option value="fi">Finland</option><option value="fj">Fiji</option><option value="fm">Federated States of Micronesia</option><option value="fr">France</option>
+						<option value="gb">Great Britain</option><option value="gd">Grenada</option><option value="gh">Ghana</option><option value="gm">Gambia</option>
+						<option value="gr">Greece</option><option value="gt">Guatemala</option><option value="gw">Guinea Bissau</option><option value="gy">Guyana</option>
+						<option value="hk">Hong Kong</option><option value="hn">Honduras</option><option value="hr">Croatia</option><option value="hu">Hungaria</option>
+						<option value="id">Indonesia</option><option value="ie">Ireland</option><option value="il">Israel</option><option value="in" selected="selected">India</option>
+						<option value="is">Iceland</option><option value="it">Italy</option><option value="jm">Jamaica</option><option value="jo">Jordan</option>
+						<option value="jp">Japan</option><option value="ke">Kenya</option><option value="kg">Krygyzstan</option><option value="kh">Cambodia</option>
+						<option value="kn">Saint Kitts and Nevis</option><option value="kr">South Korea</option><option value="kw">Kuwait</option><option value="ky">Cayman Islands</option>
+						<option value="kz">Kazakhstan</option><option value="la">Laos</option><option value="lb">Lebanon</option><option value="lc">Saint Lucia</option>
+						<option value="lk">Sri Lanka</option><option value="lr">Liberia</option><option value="lt">Lithuania</option><option value="lu">Luxembourg</option>
+						<option value="lv">Latvia</option><option value="md">Moldova</option><option value="mg">Madagascar</option><option value="mk">Macedonia</option>
+						<option value="ml">Mali</option><option value="mn">Mongolia</option><option value="mo">Macau</option><option value="mr">Mauritania</option>
+						<option value="ms">Montserrat</option><option value="mt">Malta</option><option value="mu">Mauritius</option><option value="mw">Malawi</option>
+						<option value="mx">Mexico</option><option value="my">Malaysia</option><option value="mz">Mozambique</option><option value="na">Namibia</option>
+						<option value="ne">Niger</option><option value="ng">Nigeria</option><option value="ni">Nicaragua</option><option value="nl">Netherlands</option>
+						<option value="np">Nepal</option><option value="no">Norway</option><option value="nz">New Zealand</option><option value="om">Oman</option>
+						<option value="pa">Panama</option><option value="pe">Peru</option><option value="pg">Papua New Guinea</option><option value="ph">Philippines</option>
+						<option value="pk">Pakistan</option><option value="pl">Poland</option><option value="pt">Portugal</option><option value="pw">Palau</option>
+						<option value="py">Paraguay</option><option value="qa">Qatar</option><option value="ro">Romania</option><option value="ru">Russia</option>
+						<option value="sa">Saudi Arabia</option><option value="sb">Soloman Islands</option><option value="sc">Seychelles</option><option value="se">Sweden</option>
+						<option value="sg">Singapore</option><option value="si">Slovenia</option><option value="sk">Slovakia</option><option value="sl">Sierra Leone</option>
+						<option value="sn">Senegal</option><option value="sr">Suriname</option><option value="st">Sao Tome e Principe</option><option value="sv">El Salvador</option>
+						<option value="sz">Swaziland</option><option value="tc">Turks and Caicos Islands</option><option value="td">Chad</option><option value="th">Thailand</option>
+						<option value="tj">Tajikistan</option><option value="tm">Turkmenistan</option><option value="tn">Tunisia</option><option value="tr">Turkey</option>
+						<option value="tt">Republic of Trinidad and Tobago</option><option value="tw">Taiwan</option><option value="tz">Tanzania</option><option value="ua">Ukraine</option>
+						<option value="ug">Uganda</option><option value="us">United States of America</option><option value="uy">Uruguay</option><option value="uz">Uzbekistan</option>
+						<option value="vc">Saint Vincent and the Grenadines</option><option value="ve">Venezuela</option><option value="vg">British Virgin Islands</option>
+						<option value="vn">Vietnam</option><option value="ye">Yemen</option><option value="za">South Africa</option><option value="zw">Zimbabwe</option>
+						<option value="ae">United Arab Emirates</option></select>
+				</li>
+				<li style="margin-top:20px;">
+					<span class="active">Genre</span>
+					<span class="glyphicon glyphicon-music"></span>
+				</li>
+					<ul class="genre">
+						<li class="active"><a href="#" data-genreid="0">All</a></li>
+						<li><a href="#" data-genreid="20">Alternative</a></li>
+						<li><a href="#" data-genreid="29">Anime</a></li>
+						<li><a href="#" data-genreid="2">Blues</a></li>
+						<li><a href="#" data-genreid="1122">Brazilian</a></li>
+						<li><a href="#" data-genreid="4">Children's Music</a></li>
+						<li><a href="#" data-genreid="1232">Chinese</a></li>
+						<li><a href="#" data-genreid="22">Christian &amp; Gospel</a></li>
+						<li><a href="#" data-genreid="5">Classical</a></li>
+						<li><a href="#" data-genreid="3">Comedy</a></li>
+						<li><a href="#" data-genreid="6">Country</a></li>
+						<li><a href="#" data-genreid="17">Dance</a></li>
+						<li><a href="#" data-genreid="50000063">Disney</a></li>
+						<li><a href="#" data-genreid="25">Easy Listening</a></li>
+						<li><a href="#" data-genreid="7">Electronic</a></li>
+						<li><a href="#" data-genreid="28">Enka</a></li>
+						<li><a href="#" data-genreid="50">Fitness &amp; Workout</a></li>
+						<li><a href="#" data-genreid="50000064">French Pop</a></li>
+						<li><a href="#" data-genreid="50000068">German Folk</a></li>
+						<li><a href="#" data-genreid="50000066">German Pop</a></li>
+						<li><a href="#" data-genreid="18">Hip-Hop/Rap</a></li>
+						<li><a href="#" data-genreid="8">Holiday</a></li>
+						<li><a href="#" data-genreid="1262">Indian</a></li>
+						<li><a href="#" data-genreid="53">Instrumental</a></li>
+						<li><a href="#" data-genreid="27">J-Pop</a></li>
+						<li><a href="#" data-genreid="11">Jazz</a></li>
+						<li><a href="#" data-genreid="51">K-Pop</a></li>
+						<li><a href="#" data-genreid="52">Karaoke</a></li>
+						<li><a href="#" data-genreid="30">Kayokyoku</a></li>
+						<li><a href="#" data-genreid="1243">Korean</a></li>
+						<li><a href="#" data-genreid="12">Latino</a></li>
+						<li><a href="#" data-genreid="13">New Age</a></li>
+						<li><a href="#" data-genreid="9">Opera</a></li>
+						<li><a href="#" data-genreid="14">Pop</a></li>
+						<li><a href="#" data-genreid="15">R&amp;B/Soul</a></li>
+						<li><a href="#" data-genreid="24">Reggae</a></li>
+						<li><a href="#" data-genreid="21">Rock</a></li>
+						<li><a href="#" data-genreid="10">Singer/Songwriter</a></li>
+						<li><a href="#" data-genreid="16">Soundtrack</a></li>
+						<li><a href="#" data-genreid="50000061">Spoken Word</a></li>
+						<li><a href="#" data-genreid="23">Vocal</a></li>
+						<li><a href="#" data-genreid="19">World</a></li>
+					</ul>
+		</ul>
 </aside>
 <section>
-  <div class="header">
-    <h2>Top Songs</h2> <span> Ranked by <a target="_blank" href="https://www.apple.com/itunes/charts/songs/">Itunes.</a> Streamed by <a target="_blank" href="https://soundcloud.com/">Soundcloud.</a></span>
-  </div>
-  <div id="player-container" style="width: inherit; height: 560px;"></div>
+	<div class="header">
+		<h2>Top Songs</h2> <span> Ranked by <a target="_blank" href="https://www.apple.com/itunes/charts/songs/">Itunes.</a> Streamed by <a target="_blank" href="https://soundcloud.com/">Soundcloud.</a></span>
+	</div>
+	<div id="player-container" style="width: inherit; height: 560px;"></div>
 </section>
 <div class="signature">
-  <span class="glyphicon glyphicon-heart"></span>
-  <span style="text-decoration:none;">Proudly Made in India</span>
+	<span class="glyphicon glyphicon-heart"></span>
+	<span style="text-decoration:none;">Proudly Made in India</span>
 </div>
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="http://connect.soundcloud.com/sdk.js"></script>
 <script type="text/javascript">
 (function() {
-  var script = document.createElement("script");
-  script.type = "text/javascript";
-  script.async = true;
-  script.src = "//sd.toneden.io/production/toneden.loader.js";
-  var entry = document.getElementsByTagName("script")[0];entry.parentNode.insertBefore(script, entry);
-  }());
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.async = true;
+	script.src = "//sd.toneden.io/production/toneden.loader.js";
+	var entry = document.getElementsByTagName("script")[0];entry.parentNode.insertBefore(script, entry);
+	}());
 
-  ToneDenReady = window.ToneDenReady || [];
-  ToneDenReady.push(function() {
-    //skin types: light, dark, mojave, aurora
-    //visualizer types: waves, bars
-    ToneDen.player.create({
-      dom: "#player-container",
-      skin: "dark",
-      visualizer:"waves",
-      keyboardEvents: true,
-      useCustomPurchaseTitle: true
-    });
-  });
+	ToneDenReady = window.ToneDenReady || [];
+	ToneDenReady.push(function() {
+		//skin types: light, dark, mojave, aurora
+		//visualizer types: waves, bars
+		ToneDen.player.create({
+			dom: "#player-container",
+			skin: "dark",
+			visualizer:"waves",
+			keyboardEvents: true,
+			useCustomPurchaseTitle: true
+		});
+	});
 </script>
 <script type="text/javascript">
 
-
-// $(document).ready(function() {
-
-//     $.map(countries, function (v, k) {
-//       console.log(k);
-//       $('#countries_list').append('<option value="'+k+'">'+v+'</option>')
-//     });
-//   console.log($("#countries_list".text()))
-// });
-
 $(document).ready(function() {
 
-  SC.initialize({
-    client_id: '981a74330d63b65402ab2af1ea15aaeb'
-  });
+	SC.initialize({
+		client_id: '59790a20263ed1c5cdaa2f7529fd6ae9'
+	});
 
-  function playerupdate(soundcloud_urls) {
-    var current_tracks = ToneDen.player.getInstanceByDom("#player-container").getAllTracks();
-    if(current_tracks.length > 0) { ToneDen.player.getInstanceByDom("#player-container").removeTracks(0, current_tracks.length); }
-    ToneDen.player.getInstanceByDom("#player-container").addTracks(soundcloud_urls);
-    ToneDen.player.getInstanceByDom("#player-container").skipTo(0, false);
-    $('#player-container .td.player.dark').css("background", "rgba(1, 10, 19, 1)");
-    $('#player-container .playlist').css("max-height", "100%");
-    $('#player-container .playlist').css("overflow-y", "visible");
-    $('#player-container .playlist').css("overflow-x", "visible");
+	function playerupdate(soundcloud_urls) {
+		var current_tracks = ToneDen.player.getInstanceByDom("#player-container").getAllTracks();
+		if(current_tracks.length > 0) { ToneDen.player.getInstanceByDom("#player-container").removeTracks(0, current_tracks.length); }
+		ToneDen.player.getInstanceByDom("#player-container").addTracks(soundcloud_urls);
+		ToneDen.player.getInstanceByDom("#player-container").skipTo(0, true);
 
-      setTimeout(function() {
-           $('#player-container .td.player.dark').css("background", "rgba(1, 10, 19, 1)");
-           $('#player-container .playlist').css("max-height", "100%");
-           $('#player-container .playlist').css("overflow-y", "visible");
-           $('#player-container .playlist').css("overflow-x", "visible");
-      }, 2000);
+					 $('#player-container .td.player.dark').css("background", "rgba(1, 10, 19, 1)");
+					 $('#player-container .playlist').css("max-height", "100%");
+					 $('#player-container .playlist').css("overflow-y", "visible");
+					 $('#player-container .playlist').css("overflow-x", "visible");
 
-    // var checkExist = setInterval(function() {
-    //    if ($('#player-container .player').text().trim().length > 0) {
-    //      $('#player-container .dark').css("background", "rgba(1, 10, 19, 1)");
-    //      $('#player-container .playlist').css("max-height", "100%");
-    //      $('#player-container .playlist').css("overflow-y", "visible");
-    //      $('#player-container .playlist').css("overflow-x", "visible");
-    //      //playerupdate();
-    //       clearInterval(checkExist);
-    //    }
-    // }, 100);
-  }
+					//  var style = $('<style>#player-container .td.player.dark{background:rgba(1, 10, 19, 1);}#player-container .playlist {max-height:100%;}#player-container .playlist {overflow-x:visible;} #player-container .playlist {overflow-y:visible;}</style>');
+					// $('html > head').append(style);
+	}
 
-  function searchOnSoundcloud(json_arr) {
-    console.log(json_arr);
-    var items = json_arr[0].entry;
-    if(!(items instanceof Array)) return;
-    var soundcloud_urls = [];
-    var index, item, song_name, song_url, song_item;
-    for (index=0; index<items.length; index++) {
-      item = items[index];
-      song_name = item['im:name']['label'];
-      SC.get('/tracks', { q: song_name, limit: 1 }, function(tracks) {
-        song_item = Object.keys(tracks).map(function(k) { return tracks[k] });
-        song_url = song_item[0].permalink_url;
-        soundcloud_urls.push(song_url);
-        if (soundcloud_urls.length == 9) {
-          console.log(soundcloud_urls);
-          playerupdate(soundcloud_urls)
-        }
-      });
-    }
-  }
+	function getSCsong(song_name, next) {
+		SC.get('/tracks', { q: song_name, limit: 1 }, function(tracks) {
+			song_item = Object.keys(tracks).map(function(k) { return tracks[k] });
+			console.log(song_item);
+			song_url = song_item[0]["permalink_url"];
+			window.soundcloud_urls.push(song_url);
+			next();
+		});
+	}
 
-  function getsongs() {
-    var country = $( "#countries_list" ).val();
-    var genre = $( ".genre li.active").text();
-    var genre_id = $( ".genre li.active a").attr("data-genreid");
-    console.log("Requesting songs for Country: " + country+" Genre: "+genre+" GenreID: "+genre_id);
+	function createTask(song_name){
+		return function(next){
+				getSCsong(song_name, next);
+		}
+	}
 
-    $.getJSON( "/songs", { country: country, genreid: genre_id } )
-    .done(function( json ) {
-      json = Object.keys(json).map(function(k) { return json[k] });
-      searchOnSoundcloud(json);
-    })
-    .fail(function( jqxhr, textStatus, error ) {
-      var err = textStatus + ", " + error;
-      console.log( "Request Failed: " + err );
-    });
-  }
+	function searchOnSoundcloud(json_arr) {
+		console.log(json_arr);
+		var items = json_arr[0].entry;
+		if(!(items instanceof Array)) return;
+		var index, item, song_name, song_url, song_item;
+		for (index=0; index< items.length; index++) {
+			item = items[index];
+			song_name = item['im:name']['label'];
+			//only song name ignore after special character
+			song_name = song_name.substr(0, song_name.indexOf('('));
+			console.log(song_name);
 
-  getsongs();
+			if (song_name != "")
+				 $(document).queue('tasks', createTask(song_name));
+		}
 
-  $("#countries_list").change(function () {
-    var curr_country_code = this.value;
-    $("ul.genre > li:first-child a").trigger("click");
-  });
+		$(document).queue('tasks', function(){
+			console.log("all done");
+			var arr = window.soundcloud_urls;
+			window.soundcloud_urls = arr.filter(function(n, pos){ return n != undefined && arr.indexOf(n) == pos;});
+			console.log(window.soundcloud_urls);
+			playerupdate(window.soundcloud_urls)
+		});
 
-  $('ul.genre li > a').click(function() {
-    $('li').removeClass();
-    $(this).parent().addClass('active');
-    getsongs()
-  });
+		$(document).dequeue('tasks');
+		}
+
+	function getsongs() {
+		window.soundcloud_urls = [];
+		var country = $( "#countries_list" ).val();
+		var genre = $( ".genre li.active").text();
+		var genre_id = $( ".genre li.active a").attr("data-genreid");
+		console.log("Requesting songs for Country: " + country+" Genre: "+genre+" GenreID: "+genre_id);
+
+		$.getJSON( "/songs", { country: country, genreid: genre_id } )
+		.done(function( json ) {
+			json = Object.keys(json).map(function(k) { return json[k] });
+			searchOnSoundcloud(json);
+		})
+		.fail(function( jqxhr, textStatus, error ) {
+			var err = textStatus + ", " + error;
+			console.log( "Request Failed: " + err );
+		});
+	}
+
+	$("#countries_list").change(function () {
+		var curr_country_code = this.value;
+		$("ul.genre > li:first-child a").trigger("click");
+	});
+
+	$('ul.genre li > a').click(function() {
+		$('li').removeClass();
+		$(this).parent().addClass('active');
+		getsongs()
+	});
+
+	getsongs();
+
 });
 
 </script>
